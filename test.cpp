@@ -1,3 +1,4 @@
+// mail:Roniharpaz1@gmail.com
 #include "doctest.h"
 #include "complex.hpp"
 #include "node.hpp"
@@ -5,9 +6,11 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-//hello
 using namespace std;
-
+/**
+ * TEST CLASS
+ * This class represent a tests cases
+ */
 TEST_CASE("Binary Tree Operations")
 {
     Node<double> root_node(1.1);
@@ -185,9 +188,10 @@ TEST_CASE("Non-Binary Tree Operations")
         CHECK(result == expected);
     }
 }
-TEST_CASE("TEST EXCEPTIONS")
+
+TEST_CASE("EXCEPTIONS")
 {
-    SUBCASE("test add 4 nodes to tree ary tree")
+    SUBCASE("test add 4 nodes to three ary tree")
     {
         Node<int> root_node(1);
         Tree<int, 3> tree;
@@ -235,7 +239,8 @@ TEST_CASE("TEST EXCEPTIONS")
         CHECK_THROWS(tree.add_sub_node(root_node, root_node));
     }
 }
-TEST_CASE("test complex tree"){
+
+TEST_CASE("Complex tree"){
     Complex c1(1, 2);
     Complex c2(1, 4);
     Complex c3(0.3, 4);

@@ -1,9 +1,14 @@
+//mail:Roniharpaz1@gmail.com
 #include <iostream>
 #include <string>
 #include "node.hpp"
 #include "tree.hpp"
 #include "complex.hpp"
 
+/**
+ * DEMO CLASS
+ * Represent a few examples of implements my tree Object.
+ */
 using namespace std;
 int main()
 {
@@ -97,7 +102,7 @@ int main()
     cout << three_ary_tree << endl;
 
     /**
-     * binary tree with Complex type(see complex.hpp)
+     * Binary tree with Complex type(see complex.hpp)
      */
     Complex c1(-1, 2);
     Complex c2(1, -4);
