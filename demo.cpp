@@ -198,7 +198,7 @@ int main()
         cout << (*node)->get_value() << endl;
     }
 
-    //cout << university_tree;
+    /////cout << university_tree;
     return 0;
 }
 
