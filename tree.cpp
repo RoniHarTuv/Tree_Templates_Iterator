@@ -1,3 +1,3 @@
 // mail:Roniharpaz1@gmail.com
 #include "tree.hpp"
-// * all the implementation is i the tree.hpp file
+// * all the implementation are in the tree.hpp file

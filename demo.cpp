@@ -32,6 +32,7 @@ int main()
     tree.add_sub_node(n2, n5);
 
     // Print various traversals
+    cout<< "***** Binary double Tree *****" << endl;
     cout << "Pre-Order Traversal:" << endl;
     for (auto node = tree.begin_pre_order(); node != tree.end_pre_order(); ++node)
     {
@@ -67,7 +68,7 @@ int main()
     {
         cout << (*node)->get_value() << endl;
     }
-    cout << tree << endl;
+    // cout << tree << endl;
     /**
      * Three-Ary Tree :
      */
@@ -87,19 +88,19 @@ int main()
     three_ary_tree.add_sub_node(int_root_node, int_n3);
     three_ary_tree.add_sub_node(int_n1, int_n4);
     three_ary_tree.add_sub_node(int_n2, int_n5);
-
-    cout << "3-ary Tree DFS Traversal:" << endl;
+    cout<< "***** 3-ary int Tree *****" << endl;
+    cout << "DFS Traversal:" << endl;
     for (auto node = three_ary_tree.begin_dfs_scan(); node != three_ary_tree.end_dfs_scan(); ++node)
     {
         cout << (*node)->get_value() << endl;
     }
 
-    cout << "3-ary Tree BFS Traversal:" << endl;
+    cout << "BFS Traversal:" << endl;
     for (auto node = three_ary_tree.begin_bfs_scan(); node != three_ary_tree.end_bfs_scan(); ++node)
     {
         cout << (*node)->get_value() << endl;
     }
-    cout << three_ary_tree << endl;
+    //cout << three_ary_tree << endl;
 
     /**
      * Binary tree with Complex type(see complex.hpp)
@@ -122,6 +123,43 @@ int main()
     complex_tree.add_sub_node(c2, c5);
     complex_tree.add_sub_node(c3, c6);
     complex_tree.add_sub_node(c3, c7);
+    cout<< "***** Binary Complex Tree *****" << endl;
+    cout << "Pre-Order Traversal:" << endl;
+    for (auto node = complex_tree.begin_pre_order(); node != complex_tree.end_pre_order(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
+    cout << "Post-Order Traversal:" << endl;
+    for (auto node = complex_tree.begin_post_order(); node != complex_tree.end_post_order(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
+    cout << "In-Order Traversal:" << endl;
+    for (auto node = complex_tree.begin_in_order(); node != complex_tree.end_in_order(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
+    cout << "BFS Traversal:" << endl;
+    for (auto node = complex_tree.begin_bfs_scan(); node != complex_tree.end_bfs_scan(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
+    cout << "DFS Traversal:" << endl;
+    for (auto node = complex_tree.begin_dfs_scan(); node != complex_tree.end_dfs_scan(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
+    cout << "HEAP Traversal:" << endl;
+    for (auto node = complex_tree.begin_heap(); node != complex_tree.end_heap(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
     cout << complex_tree;
 
     /**
@@ -135,7 +173,7 @@ int main()
     string s6="Rooms";
     string s7="Library";
 
-    Tree<string,3> university_tree;
+    Tree<string,5> university_tree;
     Node<string> ss2 = Node<string>(s2);
     Node<string> ss3 = Node<string>(s3);
     Node<string> ss4 = Node<string>(s4);
@@ -147,7 +185,20 @@ int main()
     university_tree.add_sub_node(uni_root,ss2);
     university_tree.add_sub_node(ss2,ss3);
     university_tree.add_sub_node(ss3,ss4);
-    cout << university_tree;
+    cout<< "***** 5-ary string  Tree *****" << endl;
+    cout << "BFS Traversal:" << endl;
+    for (auto node = university_tree.begin_bfs_scan(); node != university_tree.end_bfs_scan(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
+    cout << "DFS Traversal:" << endl;
+    for (auto node = university_tree.begin_dfs_scan(); node != university_tree.end_dfs_scan(); ++node)
+    {
+        cout << (*node)->get_value() << endl;
+    }
+
+    //cout << university_tree;
     return 0;
 }
 
