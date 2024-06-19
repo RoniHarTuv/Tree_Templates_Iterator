@@ -9,6 +9,7 @@
  * DEMO CLASS
  * Represent a few examples of implements my tree Object.
  * you should remove the documentation from the operstor << in order to present the GUI .
+ *  !!! - If you want to see the GUI Tree, please delete the documentation fron lines : 73,106,167,205.
  */
 using namespace std;
 int main()
@@ -89,6 +90,7 @@ int main()
     three_ary_tree.add_sub_node(int_root_node, int_n3);
     three_ary_tree.add_sub_node(int_n1, int_n4);
     three_ary_tree.add_sub_node(int_n2, int_n5);
+
     cout<< "***** 3-ary int Tree *****" << endl;
     cout << "DFS Traversal:" << endl;
     for (auto node = three_ary_tree.begin_dfs_scan(); node != three_ary_tree.end_dfs_scan(); ++node)

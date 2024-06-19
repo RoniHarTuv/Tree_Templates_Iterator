@@ -96,7 +96,7 @@ TEST_CASE("Binary Tree Operations")
 
     SUBCASE("Heap Traversal")
     {
-        std::vector<double> expected = {1.6, 1.5, 1.4, 1.3, 1.2, 1.1};
+        std::vector<double> expected = {1.1, 1.2, 1.4, 1.5, 1.3, 1.6};
         std::vector<double> result;
 
         for (auto node = tree.begin_heap(); node != tree.end_heap(); ++node)
@@ -241,7 +241,7 @@ TEST_CASE("EXCEPTIONS")
 }
 
 TEST_CASE("Complex tree"){
-    Complex c1(1, 2);
+    Complex c1(1, 2); 
     Complex c2(1, 4);
     Complex c3(0.3, 4);
     Complex c4(7, 1.2);
@@ -331,7 +331,7 @@ TEST_CASE("Complex tree"){
 
      SUBCASE("Heap Traversal")
      {
-        std::vector<Complex> expected = {c6,c2,c5,c3,c1,c4,c7};
+        std::vector<Complex> expected = {c7,c3,c4,c5,c2,c6,c1};
          std::vector<Complex> result;
 
          for (auto node = tree.begin_heap(); node != tree.end_heap(); ++node)

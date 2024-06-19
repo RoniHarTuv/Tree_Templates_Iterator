@@ -44,12 +44,13 @@ public:
         return real == c.real && imag == c.imag;
     }
 
-    //Greater-than operator to compare two complex numbers.
+    //Greater-than and smaller-than operator to compare two complex numbers.
     //note This operator is used to sort complex numbers in a heap iterator.
     bool operator>(const Complex &c) const
     {
         return real > c.real && imag > c.imag;
     }
+    
     bool operator<(const Complex &c) const
     {
         return real < c.real && imag < c.imag;

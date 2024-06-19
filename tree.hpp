@@ -207,40 +207,56 @@ public:
     typename std::vector<Node<T> *>::iterator end_heap() {
         return heap_nodes.end();
     }
-
 private:
+    /**
+     * Helper function for pre-order traversal.
+     * Visits the root node first, then recursively visits each child.
+     */
     void pre_order_helper(Node<T> *node, std::vector<Node<T> *> &result) {
         if (node == nullptr)
             return;
-        result.push_back(node);
+        result.push_back(node); // Visit the root node
         for (auto child : node->get_children()) {
-            pre_order_helper(child, result);
+            pre_order_helper(child, result); // Recursively visit each child
         }
     }
 
+    /**
+     *  Helper function for post-order traversal. 
+     * Recursively visits each child first, then visits the root node.
+     */
     void post_order_helper(Node<T> *node, std::vector<Node<T> *> &result) {
         if (node == nullptr)
             return;
         for (auto child : node->get_children()) {
-            post_order_helper(child, result);
+            post_order_helper(child, result); // Recursively visit each child
         }
-        result.push_back(node);
+        result.push_back(node); // Visit the root node
     }
 
+    /**
+     * Helper function for in-order traversal.
+     * Visits the left child first, then the root node, then the right child.
+     * This function assumes that the node has at most two children.
+     */
     void in_order_helper(Node<T> *node, std::vector<Node<T> *> &result) {
         if (node == nullptr)
             return;
 
         auto children = node->get_children();
         if (children.size() > 0) {
-            in_order_helper(children[0], result); // Left child
+            in_order_helper(children[0], result); // Visit left child
         }
-        result.push_back(node); // Root
+        result.push_back(node); // Visit the root node
         if (children.size() > 1) {
-            in_order_helper(children[1], result); // Right child
+            in_order_helper(children[1], result); // Visit right child
         }
     }
 
+    /**
+     * Helper function for breadth-first search (BFS) traversal.
+     * Uses a queue to traverse the tree level by level.
+     */
     void bfs_helper(Node<T> *node, std::vector<Node<T> *> &result) {
         if (node == nullptr)
             return;
@@ -249,53 +265,71 @@ private:
         while (!q.empty()) {
             Node<T> *current = q.front();
             q.pop();
-            result.push_back(current);
+            result.push_back(current); // Visit the current node
             for (auto child : current->get_children()) {
-                q.push(child);
+                q.push(child); // Enqueue each child
             }
         }
     }
 
+    /**
+     * Helper function for depth-first search (DFS) traversal.
+     * Visits the root node first, then recursively visits each child.
+     */
     void dfs_helper(Node<T> *node, std::vector<Node<T> *> &result) {
         if (node == nullptr)
             return;
-        result.push_back(node);
+        result.push_back(node); // Visit the root node
         for (auto child : node->get_children()) {
-            dfs_helper(child, result);
+            dfs_helper(child, result); // Recursively visit each child
         }
     }
     
+    /**
+     * Custom heap operation on the tree.
+     * Uses DFS to traverse the tree and then makes a heap based on the node values.
+     * use std::make_heap function
+     */
     void myHeap(Node<T> *node, std::vector<Node<T> *> &result) {
         if (node == nullptr)
             return;
-        dfs_helper(node, result);
+        dfs_helper(node, result); // Use DFS to populate the result vector
         auto comp = [](Node<T> *lhs, Node<T> *rhs) { return lhs->get_value() > rhs->get_value(); };
-        std::make_heap(result.begin(), result.end(), comp);
-        //std::sort_heap(result.begin(), result.end(), comp);
+        std::make_heap(result.begin(), result.end(), comp); // Create a heap from the result vector
     }
 
+    /**
+     * Recursively deletes all nodes in the tree.
+     * Frees the memory allocated for each node.
+     */
     void delete_tree(Node<T> *node) {
         if (node == nullptr)
             return;
         for (auto child : node->get_children()) {
-            delete_tree(child);
+            delete_tree(child); // Recursively delete each child
         }
-        delete node;
+        delete node; // Delete the current node
     }
 
+    /**
+     * Searches for a node with a specific value.
+     * Recursively searches the tree for a node with the given value.
+     * @return Node<T>* The node with the matching value, or nullptr if not found.
+     */
     Node<T> *find_node(Node<T> *node, const T &value) {
         if (node == nullptr)
             return nullptr;
         if (node->get_value() == value)
-            return node;
+            return node; // Return the node if the value matches
         for (auto child : node->get_children()) {
-            Node<T> *found = find_node(child, value);
+            Node<T> *found = find_node(child, value); // Recursively search each child
             if (found != nullptr)
                 return found;
         }
-        return nullptr;
+        return nullptr; // Return nullptr if the value is not found
     }
 
+    // cout operator
     friend std::ostream &operator<<(std::ostream &os, Tree<T, K> &tree) {
         Node<T> *root = tree.getRoot();
 
