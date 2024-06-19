@@ -50,6 +50,10 @@ public:
     {
         return real > c.real && imag > c.imag;
     }
+    bool operator<(const Complex &c) const
+    {
+        return real < c.real && imag < c.imag;
+    }
 };
 
 #endif

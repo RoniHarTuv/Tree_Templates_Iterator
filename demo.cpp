@@ -8,6 +8,7 @@
 /**
  * DEMO CLASS
  * Represent a few examples of implements my tree Object.
+ * you should remove the documentation from the operstor << in order to present the GUI .
  */
 using namespace std;
 int main()
@@ -68,7 +69,7 @@ int main()
     {
         cout << (*node)->get_value() << endl;
     }
-    // cout << tree << endl;
+    //cout << tree << endl;
     /**
      * Three-Ary Tree :
      */
@@ -123,6 +124,7 @@ int main()
     complex_tree.add_sub_node(c2, c5);
     complex_tree.add_sub_node(c3, c6);
     complex_tree.add_sub_node(c3, c7);
+
     cout<< "***** Binary Complex Tree *****" << endl;
     cout << "Pre-Order Traversal:" << endl;
     for (auto node = complex_tree.begin_pre_order(); node != complex_tree.end_pre_order(); ++node)
@@ -160,7 +162,7 @@ int main()
         cout << (*node)->get_value() << endl;
     }
 
-    cout << complex_tree;
+    //cout << complex_tree;
 
     /**
      * "university" Tree
@@ -198,11 +200,11 @@ int main()
         cout << (*node)->get_value() << endl;
     }
 
-    /////cout << university_tree;
+    //cout << university_tree;
     return 0;
 }
 
-// The binary tree should look like:
+// The treeary tree should look like:
 /**
  *       root = 1
  *     /   |   \
@@ -210,8 +212,9 @@ int main()
  *   /      \
  *  5        6
  */
-// The treeary tree should look like:
+
 /**
+ * // The binary tree should look like:
  *     root = 1.1
  *     /       \
  *    1.2      1.3

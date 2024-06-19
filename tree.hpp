@@ -271,7 +271,7 @@ private:
         dfs_helper(node, result);
         auto comp = [](Node<T> *lhs, Node<T> *rhs) { return lhs->get_value() > rhs->get_value(); };
         std::make_heap(result.begin(), result.end(), comp);
-        std::sort_heap(result.begin(), result.end(), comp);
+        //std::sort_heap(result.begin(), result.end(), comp);
     }
 
     void delete_tree(Node<T> *node) {
