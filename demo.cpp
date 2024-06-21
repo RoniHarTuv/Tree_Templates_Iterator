@@ -103,7 +103,7 @@ int main()
     {
         cout << (*node)->get_value() << endl;
     }
-    //cout << three_ary_tree << endl;
+    //cout << three_ary_tree << endl; //delest "//" to print the tree using GUI
 
     /**
      * Binary tree with Complex type(see complex.hpp)
@@ -164,7 +164,7 @@ int main()
         cout << (*node)->get_value() << endl;
     }
 
-    //cout << complex_tree;
+    //cout << complex_tree; //delest "//" to print the tree using GUI
 
     /**
      * "university" Tree
@@ -202,7 +202,7 @@ int main()
         cout << (*node)->get_value() << endl;
     }
 
-    //cout << university_tree;
+    //cout << university_tree; //delest "//" to print the tree using GUI
     return 0;
 }
 
